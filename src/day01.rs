@@ -15,17 +15,17 @@ pub fn solve() {
 }
 
 fn parse(contents: &String) -> Vec<i32> {
-    return contents
+    contents
         .split("\n")
         .filter(|line| line.len() != 0)
         .map(|line| line.parse::<i32>().unwrap())
-        .collect();
+        .collect()
 }
 
 fn group_into_windows(data: &Vec<i32>, window_size: usize) -> Vec<i32> {
-    return (0..(data.len() - window_size + 1))
+    (0..(data.len() - window_size + 1))
         .map(|i| (0..window_size).fold(0, |sum, j| sum + data[i + j]))
-        .collect();
+        .collect()
 }
 
 fn count_increases(data: &Vec<i32>) -> i32 {
