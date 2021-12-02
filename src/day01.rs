@@ -3,8 +3,8 @@ use std::fs;
 pub fn solve() {
     let contents =
         fs::read_to_string("input/01.txt").unwrap();
-    let items = parse(&contents);
 
+    let items = parse(&contents);
     let basic_increases = count_increases(&items);
     let windows = group_into_windows(&items, 3);
     let window_increases = count_increases(&windows);
